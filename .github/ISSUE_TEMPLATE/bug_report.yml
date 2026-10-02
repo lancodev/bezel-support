@@ -1,0 +1,49 @@
+name: Bug report
+description: Something in Bezel isn't working as expected
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: "Issues are public. Please don't include personal information."
+  - type: input
+    id: os
+    attributes:
+      label: Operating system
+      placeholder: e.g. macOS 15.4 (Apple silicon), Windows 11 24H2
+    validations:
+      required: true
+  - type: input
+    id: app
+    attributes:
+      label: Stream Deck app and device
+      placeholder: e.g. Stream Deck 7.5.0, Stream Deck +
+    validations:
+      required: true
+  - type: input
+    id: bezel
+    attributes:
+      label: Bezel version
+      placeholder: e.g. 1.0.0
+  - type: input
+    id: monitor
+    attributes:
+      label: Monitor model and connection
+      placeholder: e.g. 40" ultrawide over Thunderbolt, via a USB-C dock
+    validations:
+      required: true
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened?
+      description: What you pressed or turned, what you expected, and what happened instead.
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs (optional)
+      description: |
+        Attach or paste the newest file from the plugin's `logs` folder:
+        macOS: ~/Library/Application Support/com.elgato.StreamDeck/Plugins/com.lancodev.bezel.sdPlugin/logs
+        Windows: %APPDATA%\Elgato\StreamDeck\Plugins\com.lancodev.bezel.sdPlugin\logs
+      render: text
